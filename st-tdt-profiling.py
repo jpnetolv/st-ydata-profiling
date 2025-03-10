@@ -2,7 +2,6 @@
 import pandas as pd  # Biblioteca para manipulação e análise de dados
 from ydata_profiling import ProfileReport  # Biblioteca para gerar relatórios detalhados de análise de dados
 import streamlit as st  # Biblioteca para criar aplicativos interativos de dados na web
-from streamlit_pandas_profiling import st_profile_report  # Integração entre Streamlit e ydata-profiling para exibir relatórios
 from utils import process_file  # Função personalizada para carregar arquivos CSV
 
 # Configuração do layout do Streamlit para exibição em larga escala
@@ -44,7 +43,7 @@ def main():
 
         # Gera o relatório de Pandas Profiling
         st.title('Relatório Ydata Profiling')
-        profile = ProfileReport(df, minimal=True)
+        profile = ProfileReport(df)
         st_profile_report(profile)
         
         # Opção para baixar o relatório como um arquivo HTML
